@@ -31,8 +31,8 @@ class TransportOrderService(private val repository: TransportOrderRepository) {
     fun findAll(): List<TransportOrder> = repository.findAll()
 
 
-    private fun calculatePrice(startOrt: String, zielOrt: String): Double {
-        // Beispiel: Preis = Distanz * 0.5
-        return abs(startOrt.hashCode() - zielOrt.hashCode()) * 0.005
+    internal fun calculatePrice(startLocation: String, destination: String): Double {
+        // Example: amount = distance * 0.5
+        return abs(startLocation.hashCode() - destination.hashCode()) * 0.005
     }
 }
