@@ -1,0 +1,2 @@
+INSERT INTO transport_orders (id, customer, start_location, destination, motorcycle_type, transport_date, fee)
+VALUES (1, 'Carl Diegelmann, 'Berlin', 'Munich', 'Ducati', '2025-01-08', 250.00);

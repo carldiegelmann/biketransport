@@ -1,0 +1,38 @@
+<mat-card-title>Orders</mat-card-title>
+<mat-card-content>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.customer }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="startLocation">
+      <th mat-header-cell *matHeaderCellDef>Start Location</th>
+      <td mat-cell *matCellDef="let element">{{ element.startLocation }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="destination">
+      <th mat-header-cell *matHeaderCellDef>Destination</th>
+      <td mat-cell *matCellDef="let element">{{ element.destination }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="transportDate">
+      <th mat-header-cell *matHeaderCellDef>Transport date</th>
+      <td mat-cell *matCellDef="let element">{{ element.transportDate }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fee">
+      <th mat-header-cell *matHeaderCellDef>Fee</th>
+      <td mat-cell *matCellDef="let element">{{ element.fee }}</td>
+    </ng-container>
+
+    <!-- Header und Zeilen -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</mat-card-content>

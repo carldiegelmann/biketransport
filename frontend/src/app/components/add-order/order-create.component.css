@@ -1,0 +1,19 @@
+.order-form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+mat-card {
+  width: 500px;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}

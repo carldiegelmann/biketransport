@@ -1,0 +1,12 @@
+<h1>Transport Orders</h1>
+
+<mat-card appearance="outlined">
+  <mat-card-content>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <a href="/list-orders" mat-menu-item>List Orders</a>
+      <a href="/create-order" mat-menu-item>Create New Order</a>
+    </mat-menu>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+</mat-card>
