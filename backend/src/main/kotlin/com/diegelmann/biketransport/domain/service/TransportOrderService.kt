@@ -1,6 +1,7 @@
 package com.diegelmann.biketransport.domain.service
 
 import com.diegelmann.biketransport.domain.model.TransportOrder
+import com.diegelmann.biketransport.domain.model.TransportOrderStatus
 import com.diegelmann.biketransport.domain.port.TransportOrderRepository
 import org.springframework.stereotype.Service
 import java.time.LocalDate
@@ -30,6 +31,11 @@ class TransportOrderService(private val repository: TransportOrderRepository) {
 
     fun findAll(): List<TransportOrder> = repository.findAll()
 
+    fun updateOrderStatus(orderId: Long, status: TransportOrderStatus): TransportOrder {
+        val order = repository.findById(orderId).orElseThrow { IllegalArgumentException("Order not found") }
+        order.status = status
+        return repository.save(order)
+    }
 
     internal fun calculatePrice(startLocation: String, destination: String): Double {
         // Example: amount = distance * 0.5

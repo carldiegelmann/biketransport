@@ -1,24 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
-import { MatCardModule } from '@angular/material/card';
+import { Component, OnInit } from "@angular/core";
+import { MatTableModule } from "@angular/material/table";
+import { MatCardModule } from "@angular/material/card";
 
-import { TransportOrdersService } from '../../services/transport-orders.service';
+import { TransportOrdersService } from "../../services/transport-orders.service";
 
 @Component({
-  selector: 'app-material-table',
+  selector: "app-material-table",
   standalone: true,
   imports: [MatTableModule, MatCardModule],
-  templateUrl: './material-table.component.html',
-  styleUrls: ['./material-table.component.css'],
+  templateUrl: "./material-table.component.html",
+  styleUrls: ["./material-table.component.css"],
 })
 export class MaterialTableComponent implements OnInit {
   displayedColumns: string[] = [
-    'id',
-    'name',
-    'startLocation',
-    'destination',
-    'transportDate',
-    'fee',
+    "id",
+    "name",
+    "startLocation",
+    "destination",
+    "transportDate",
+    "status",
+    "fee",
   ];
   dataSource: any[] = [];
 
@@ -34,7 +35,7 @@ export class MaterialTableComponent implements OnInit {
         this.dataSource = data; // update data
       },
       error: (error) => {
-        console.error('Error loading order data:', error);
+        console.error("Error loading order data:", error);
       },
     });
   }

@@ -3,6 +3,10 @@ package com.diegelmann.biketransport.domain.model
 import java.time.LocalDate
 import jakarta.persistence.*
 
+enum class TransportOrderStatus {
+    PENDING, CONFIRMED, COMPLETED
+}
+
 @Entity
 @Table(name = "transport_orders")
 data class TransportOrder(
@@ -25,7 +29,11 @@ data class TransportOrder(
     val transportDate: LocalDate,
 
     @Column(nullable = false)
-    val fee: Double
+    val fee: Double,
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    var status: TransportOrderStatus = TransportOrderStatus.PENDING
 ){
     // Parameterloser Konstruktor für Hibernate
     constructor() : this(
