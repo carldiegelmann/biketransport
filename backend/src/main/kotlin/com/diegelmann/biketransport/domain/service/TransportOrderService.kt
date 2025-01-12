@@ -5,7 +5,6 @@ import com.diegelmann.biketransport.domain.model.TransportOrderStatus
 import com.diegelmann.biketransport.domain.port.TransportOrderRepository
 import org.springframework.stereotype.Service
 import java.time.LocalDate
-import javax.print.attribute.standard.Destination
 import kotlin.math.abs
 
 @Service

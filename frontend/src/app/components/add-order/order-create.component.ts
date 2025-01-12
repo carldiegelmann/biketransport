@@ -9,7 +9,6 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatDatepicker } from "@angular/material/datepicker";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatNativeDateModule } from "@angular/material/core";
-import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
 import { Router } from "@angular/router";
 
 @Component({
@@ -23,7 +22,7 @@ import { Router } from "@angular/router";
     MatDatepickerModule,
     MatNativeDateModule,
   ],
-  providers: [MatDatepickerModule, MatSnackBarModule],
+  providers: [MatDatepickerModule],
   selector: "app-order-create",
   templateUrl: "./order-create.component.html",
   styleUrls: ["./order-create.component.css"],
@@ -35,7 +34,6 @@ export class OrderCreateComponent implements OnInit {
     private fb: FormBuilder,
     private orderService: TransportOrdersService,
     private notificationService: NotificationService,
-    private snackBar: MatSnackBar,
     private router: Router
   ) {}
 
@@ -46,7 +44,6 @@ export class OrderCreateComponent implements OnInit {
       destination: ["", Validators.required],
       motorcycleType: [""],
       transportDate: ["", Validators.required],
-      fee: ["", [Validators.required, Validators.min(0)]],
     });
   }
 
