@@ -34,8 +34,7 @@ Follow these steps to set up the Kotlin backend:
 
 1. Clone the repository:
 
-   git clone https://github.com/your-username/project-name.git
-   cd project-name/backend
+   git clone https://github.com/carldiegelmann/biketransport.git
 
 2. Install dependencies:
 
