@@ -1,64 +1,71 @@
 <div class="order-form-container">
-  <mat-card-title>Create a New Transport Order</mat-card-title>
-  <mat-card-content>
-    <form (ngSubmit)="saveOrder()" [formGroup]="orderForm">
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Customer Name</mat-label>
-        <input
-          matInput
-          formControlName="customer"
-          placeholder="Enter customer name"
-        />
-      </mat-form-field>
+  <mat-card>
+    <mat-card-content>
+      <mat-card-title style="margin-bottom: 20px"
+        ><h4>New Transport Order:</h4></mat-card-title
+      >
+      <form (ngSubmit)="saveOrder()" [formGroup]="orderForm">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Customer Name</mat-label>
+          <input
+            matInput
+            formControlName="customer"
+            placeholder="Enter customer name"
+          />
+        </mat-form-field>
 
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Start Location</mat-label>
-        <input
-          matInput
-          formControlName="startLocation"
-          placeholder="Enter start location"
-        />
-      </mat-form-field>
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Start Location</mat-label>
+          <input
+            matInput
+            formControlName="startLocation"
+            placeholder="Enter start location"
+          />
+        </mat-form-field>
 
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Destination</mat-label>
-        <input
-          matInput
-          formControlName="destination"
-          placeholder="Enter destination"
-        />
-      </mat-form-field>
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Destination</mat-label>
+          <input
+            matInput
+            formControlName="destination"
+            placeholder="Enter destination"
+          />
+        </mat-form-field>
 
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Motorcycle Type</mat-label>
-        <input
-          matInput
-          formControlName="motorcycleType"
-          placeholder="Enter motorcycle type"
-        />
-      </mat-form-field>
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Motorcycle Type</mat-label>
+          <input
+            matInput
+            formControlName="motorcycleType"
+            placeholder="Enter motorcycle type"
+          />
+        </mat-form-field>
 
-      <mat-form-field appearance="outline" class="form-field">
-        <mat-label>Transport Date</mat-label>
-        <input
-          matInput
-          [matDatepicker]="picker"
-          formControlName="transportDate"
-        />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Transport Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="transportDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
 
-      <div class="form-actions">
-        <button
-          mat-raised-button
-          color="primary"
-          type="submit"
-          [disabled]="orderForm.invalid"
-        >
-          Create Order
-        </button>
-      </div>
-    </form>
-  </mat-card-content>
+        <div class="form-actions">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="orderForm.invalid"
+          >
+            Create Order
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>

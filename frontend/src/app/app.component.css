@@ -1,0 +1,11 @@
+.title_center {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
