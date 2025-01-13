@@ -20,7 +20,7 @@ import { NotificationService } from "../../services/notification.service";
     MatSelectModule,
     ReactiveFormsModule,
   ],
-  providers: [MatSnackBarModule, NotificationService],
+  providers: [MatSnackBarModule],
   selector: "app-change-order-status",
   templateUrl: "./change-order-status.component.html",
   styleUrls: ["./change-order-status.component.css"],
